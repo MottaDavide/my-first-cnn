@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+      "matangover.mypy",
+      "ms-toolsai.jupyter",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-toolsai.jupyter-keymap",
+      "mhutchie.git-graph",
+      "iterative.dvc",
+      "mikestead.dotenv",
+      "davidanson.vscode-markdownlint",
+      "reditorsupport.r",
+      "rdebugger.r-debugger",
+      "mechatroner.rainbow-csv",
+      "vscode-icons-team.vscode-icons",
+      "eamodio.gitlens",
+      "quarto.quarto",
+      "donjayamanne.python-environment-manager"
+    ]
+  }
