@@ -3,6 +3,8 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 
+print('si parte')
+
 transform = transforms.ToTensor()
 trainset = torchvision.datasets.FashionMNIST(root="./data",
                                       train = True,
