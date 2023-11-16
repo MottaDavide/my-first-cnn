@@ -1,9 +1,10 @@
+#%%
 import torch
 import torchvision
 import torchvision.transforms as transforms
 
 transform = transforms.ToTensor()
-trainset = torchvision.datasets.MNIST(root="./data",
+trainset = torchvision.datasets.FashionMNIST(root="./data",
                                       train = True,
                                       download=True,
                                       transform=transform)
@@ -83,16 +84,18 @@ class NN(nn.Module):
 
 # set cpu or gpu 
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+print('device', device)
 net = NN()
 net.to(device) # move the net to gpu is available, cpu otherwise
 
-
+"""
 # for loop in batch size
 for i, data in enumerate(trainloader):   # data = contains batch images and batch labels
     inputs, labels = data[0].to(device), data[1].to(device)  # move to gpu or cpu
     print('start', inputs.shape)
     print('after net', net(inputs).shape)
     break
+"""
 
 # num parameters
 num_params = 0
@@ -134,16 +137,13 @@ def train_one_epoch():
         optimizer.step()
 
 
-        if batch % 500 == 499:
+        if (batch) % 500 == 499:
             avg_loss_across_batches = running_loss / 500
             avg_acc_across_batches = (running_accuracy / 500)*100
-            print (f'Batch {batch}, Loss {avg_loss_across_batches: .2f}, Acc {avg_acc_across_batches :.1f}%')
+            print (f'Batch {batch + 1}, Loss {avg_loss_across_batches: .2f}, Acc {avg_acc_across_batches :.1f}%')
 
-        running_loss = .0
-        running_accuracy =.0
-
-        print()
-
+            running_loss = .0
+            running_accuracy =.0
     print()
 
 
